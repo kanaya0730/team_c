@@ -2,25 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KondoTest : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
-    /// <summary>PlayerのSpeed</summary>
-    public float Speed => _speed;
-
-    /// <summary>Playerのジャンプ力</summary>
-    public float JumpPower => _jumpPower;
-
-    public float X => _x;
-
-    /// <summary>PlayerのSpeed</summary>
     [SerializeField]
     [Header("Playerのスピード")]
     protected float _speed = 10f;
 
-    /// <summary>Playerのジャンプ力</summary>
     [SerializeField]
     [Header("ジャンプ力")]
     float _jumpPower = 10f;
+
+    [SerializeField]
+    [Header("PlayerのHp")]
+    float _playerHp = 3;
 
 
     protected Rigidbody2D _rb;
@@ -38,6 +32,7 @@ public class KondoTest : MonoBehaviour
 
     void Update()
     {
+        GameOver();
         OnMove();//横移動
         OnJump();//ジャンプ
         _rb.velocity = _dir;//移動
@@ -86,10 +81,17 @@ public class KondoTest : MonoBehaviour
         }
     }
 
-    public void Daed()
+    void Dead()
     {
         _rb.freezeRotation = false;
     }
 
-}
+    void GameOver()
+    {
+        if(_playerHp < 1)
+        {
+            Dead();
+        }
 
+    }
+}
