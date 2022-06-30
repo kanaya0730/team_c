@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// UIを使っているのでこれを記入しましょう
 using UnityEngine.UI;
 public class UIText : MonoBehaviour
 {
@@ -17,20 +16,20 @@ public class UIText : MonoBehaviour
     {
 
     }
-    // クリックで次のページを表示させるための関数
+    // クリックで次のページを表示させる
     public bool IsClicked()
     {
         if (Input.GetMouseButtonDown(0)) return true;
         return false;
     }
 
-    // ナレーション用のテキストを生成する関数
+    // ナレーション用のテキストを生成する
     public void DrawText(string text)
     {
         nameText.text = "";
         StartCoroutine("CoDrawText", text);
     }
-    // 通常会話用のテキストを生成する関数
+    // 通常会話用のテキストを生成する
     public void DrawText(string name, string text)
     {
         nameText.text = name;
