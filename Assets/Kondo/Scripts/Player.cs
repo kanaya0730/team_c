@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField]
     [Header("Playerのスピード")]
@@ -15,7 +15,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     [Header("PlayerのHp")]
     float _playerHp = 3;
-
 
     protected Rigidbody2D _rb;
     protected Vector2 _dir;
@@ -52,17 +51,13 @@ public class PlayerMove : MonoBehaviour
         if (_isGrounded && Input.GetButtonDown("Jump"))
         {
             _dir = Vector2.up * _jumpPower;
+            Debug.Log("押された");
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-
-    //}
-
     private void OnCollisionStay2D(Collision2D collision)
     {
-                if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             _isGrounded = true;
         }
@@ -76,7 +71,7 @@ public class PlayerMove : MonoBehaviour
     /// <summary>移動方向でSpriteの向きを変える</summary>
     void Inversion()
     {
-        if (_dir.x > 0)
+        if (_dir.x > 0)　
         {
             _sp.flipX = false;
         }
@@ -97,6 +92,5 @@ public class PlayerMove : MonoBehaviour
         {
             Dead();
         }
-
     }
 }
