@@ -11,11 +11,21 @@ public class TalkManager : MonoBehaviour
     [Header("分岐A")] GameObject _ButtonA;//【何も言わずそのまま渡す】
     [SerializeField]
     [Header("分岐B")] GameObject _ButtonB;//【思ったことをそのまま言って渡す】
+
+    [SerializeField]
+    [Header("分岐A1")] GameObject _ButtonA1;//【何か反論する】
+    [SerializeField]
+    [Header("分岐B1")] GameObject _ButtonB1;//【何も反論しない】
+
+    [SerializeField]
+    [Header("ヒロイン1立ち絵")] GameObject[] _heroineImage;//[0],通常 [1],笑顔 [2],照れる [3],困る [4],落ち込む
+    [SerializeField]
+    [Header("主人公立ち絵")] GameObject _playerImage; //主人公
+
     [SerializeField]
     [Header("スタートボタン")]public GameObject _button;
     void Start()
     {
-        _button.SetActive(false);
         StartCoroutine("Cotest");
     }
     IEnumerator Skip()
@@ -28,6 +38,7 @@ public class TalkManager : MonoBehaviour
         uitext.DrawText("昼休みになり昼食を落ち着いて食べようと珍しく旧校舎に来てみるとマスクをつけた女子が窓際に立っていた。");
         yield return StartCoroutine("Skip");
 
+        _heroineImage[0].SetActive(true);
         uitext.DrawText("自分以外にもいるんだなぁと考えていると急に風が吹きマスク女子のマスクが飛ばされ外れる。");
         yield return StartCoroutine("Skip");
 
@@ -42,15 +53,38 @@ public class TalkManager : MonoBehaviour
 
         uitext.DrawText("主人公", "い、いえ飛んできたので");
         yield return StartCoroutine("Skip");
-        StartCoroutine("RouteA");//本来はBranchに移行する
+        StartCoroutine("Branch");
     }
     public void Branch()
     {
         _ButtonA.SetActive(true);
-        _ButtonB.SetActive(false);
+        _ButtonB.SetActive(true);
+    }
+    public void Branch1()
+    {
+        _ButtonA1.SetActive(true);
+        _ButtonB1.SetActive(true);
+    }
+    public void BranchA()
+    {
+        StartCoroutine(RouteA());
+    }
+    public void BranchB()
+    {
+        StartCoroutine(RouteB());
+    }
+    public void BranchA1()
+    {
+        StartCoroutine(RouteA1());
+    }
+    public void BranchB1()
+    {
+        StartCoroutine(RouteB1());
     }
     IEnumerator RouteA()
     {
+        _ButtonA.SetActive(false);
+        _ButtonB.SetActive(false);
         uitext.DrawText("主人公", "えっと...どうぞ");
         yield return StartCoroutine("Skip");
 
@@ -62,6 +96,8 @@ public class TalkManager : MonoBehaviour
 
         uitext.DrawText("お礼の意味を込めてのお辞儀をすると彼女はどこかへ行ってしまった。");
         yield return StartCoroutine("Skip");
+
+        _heroineImage[0].SetActive(false);
 
         uitext.DrawText("花粉症の季節でもないのになんでマスク付けてるんだろう？");
         yield return StartCoroutine("Skip");
@@ -78,10 +114,13 @@ public class TalkManager : MonoBehaviour
         uitext.DrawText("お礼の意味を込めてのお辞儀をすると彼女はどこかへ行ってしまった。");
         yield return StartCoroutine("Skip");
 
-        _button.SetActive(true);
+        StartCoroutine("Route");
     }
     IEnumerator RouteB()
     {
+        _ButtonA.SetActive(false);
+        _ButtonB.SetActive(false);
+
         uitext.DrawText("主人公", "かわいいのになんでマスクしてるんですか？");
         yield return StartCoroutine("Skip");
 
@@ -103,6 +142,8 @@ public class TalkManager : MonoBehaviour
         uitext.DrawText("ぺこりとお辞儀をして走ってどこかへ行ってしまった。");
         yield return StartCoroutine("Skip");
 
+        _heroineImage[0].SetActive(false);
+
         uitext.DrawText("なんとなく追いかけようかと思ったが追いかけるほどの理由がないため");
         yield return StartCoroutine("Skip");
 
@@ -112,7 +153,81 @@ public class TalkManager : MonoBehaviour
         uitext.DrawText("それにしても、あの人むちゃくちゃかわいかったなぁ...なんでマスク付けてるんだろ");
         yield return StartCoroutine("Skip");
 
-        
+        uitext.DrawText("そんなことを考えながらお弁当を食べ始める。");
+        yield return StartCoroutine("Skip");
+
+        StartCoroutine("Route");
+    }
+    IEnumerator Route()
+    {
+        uitext.DrawText("翌日…");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("担任に用事があり一学年上、三年生の階まで探しに来てみると数日前に旧校舎で出会ったマスクの人がいた。");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("先輩だったんだ知らなかった...って僕タメ口使っちゃったじゃん！謝んないと！");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("先輩にタメ口を使ってしまったことを謝ろうと注意されない程度に走り、近づいて声をかける。");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("主人公", "あ、あの！この間はすみませんでした！");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("雪枝", "この間って、マスクとってくれた人ですよね、急に謝ってきてどうしたんですか？");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("主人公", "いや、その、先輩だって知らずタメ口使ったので謝ろうと");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("雪枝", "あぁそういうことなんですね謝らなくてもよかったのに");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("そんな風に話していると急にほかの女子生徒からからかってくるような言葉が飛んでくる。");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("厳密には僕ではなく目の前にいる先輩に対してだ。しかも悪意を持ってだ。");
+        yield return StartCoroutine("Skip");
+
+        uitext.DrawText("なにを言ってるんだあの人たちは、何か言わないと気が済まない。");
+        yield return StartCoroutine("Skip");
+
+        StartCoroutine("Branch1");
+        //_button.SetActive(true);
+
+
+    }
+    IEnumerator RouteA1()
+    {
+        _ButtonA1.SetActive(false);
+        _ButtonB1.SetActive(false);
+        uitext.DrawText("なにを言ってるんだあの人たちは、何か言わないと気が済まない。");
+        yield return StartCoroutine("Skip");
+    }
+    IEnumerator RouteB1()
+    {
+        _ButtonA1.SetActive(false);
+        _ButtonB1.SetActive(false);
+        uitext.DrawText("なにを言ってるんだあの人たちは、何か言わないと気が済まない。");
+        yield return StartCoroutine("Skip");
+    }
+    IEnumerator Route1()
+    {
+        uitext.DrawText("あの！さっきからなんですか！そんなこと言って楽しいですか！");
+        yield return StartCoroutine("Skip");
+        uitext.DrawText("女子生徒A","楽しいっていうか事実だからしょうがないじゃん");
+        yield return StartCoroutine("Skip");
+        uitext.DrawText("あの！さっきからなんですか！そんなこと言って楽しいですか！");
+        yield return StartCoroutine("Skip");
+        uitext.DrawText("あの！さっきからなんですか！そんなこと言って楽しいですか！");
+        yield return StartCoroutine("Skip");
+        uitext.DrawText("あの！さっきからなんですか！そんなこと言って楽しいですか！");
+        yield return StartCoroutine("Skip");
+        uitext.DrawText("あの！さっきからなんですか！そんなこと言って楽しいですか！");
+        yield return StartCoroutine("Skip");
+        uitext.DrawText("あの！さっきからなんですか！そんなこと言って楽しいですか！");
+        yield return StartCoroutine("Skip");
     }
 }
 

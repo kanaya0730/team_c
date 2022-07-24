@@ -4,25 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIText : MonoBehaviour
 {
-    // nameText:喋っている人の名前
-    // talkText:喋っている内容やナレーション
-    public Text nameText;
-    public Text talkText;
+    /// <summary>喋っている人の名前</summary>
+    [SerializeField]
+    [Header("喋っている人の名前")]
+    Text nameText;
+    /// <summary>喋っている内容やナレーション</summary>
+    [SerializeField]
+    [Header("喋っている内容やナレーション")]
+    Text talkText;
+    /// <summary>テキストエフェクト</summary>
+    [SerializeField]
+    [Header("テキストエフェクト")]
+    GameObject triangle;
 
     public bool playing = false;
     public float textSpeed = 0.1f;
 
-    void Start()
+    void Update()
     {
-
+        if(playing == false)
+        {
+            triangle.SetActive(true);
+        }
+        else
+        {
+            triangle.SetActive(false);
+        }
     }
-    // クリックで次のページを表示させる
+    /// <summary>クリックで次のページを表示させる</summary>
     public bool IsClicked()
     {
         if (Input.GetMouseButtonDown(0)) return true;
         return false;
     }
-
     // ナレーション用のテキストを生成する
     public void DrawText(string text)
     {
