@@ -6,9 +6,27 @@ using UnityEngine.SceneManagement;
 public class SceneLoder : MonoBehaviour
 {
     [SerializeField]
-    [Header("ロードしたいシーンの名前")] string _loadSceneName;
-    public void OnClick()
+    GameObject _creditPanael;
+    [SerializeField]
+    GameObject _rulePanael;
+    public void OnClick(string sceneName)
     {
-        SceneManager.LoadScene(_loadSceneName);
+        SceneManager.LoadScene(sceneName);
+    }
+    public void Credit()
+    {
+        _creditPanael.SetActive(true);
+    }
+    public void Playrule()
+    {
+        _rulePanael.SetActive(true);
+    }
+    public void CloseCredit()
+    {
+        _creditPanael.SetActive(false);
+    }
+    public void CloserulePanel()
+    {
+        _rulePanael.SetActive(false);
     }
 }

@@ -30,15 +30,15 @@ public class TalkManager : MonoBehaviour
     }
     IEnumerator Skip()
     {
-        while (uitext.playing) yield return 0;
+        while (uitext._playing) yield return 0;
         while (!uitext.IsClicked()) yield return 0;
     }
     IEnumerator Cotest()
     {
+        //_playerImage.SetActive(true);
         uitext.DrawText("昼休みになり昼食を落ち着いて食べようと珍しく旧校舎に来てみるとマスクをつけた女子が窓際に立っていた。");
         yield return StartCoroutine("Skip");
 
-        _heroineImage[0].SetActive(true);
         uitext.DrawText("自分以外にもいるんだなぁと考えていると急に風が吹きマスク女子のマスクが飛ばされ外れる。");
         yield return StartCoroutine("Skip");
 
@@ -48,6 +48,7 @@ public class TalkManager : MonoBehaviour
         uitext.DrawText("マスクの持ち主はマスクを拾おうと振り返ると自分に気づいて顔を隠してこっちに来る。");
         yield return StartCoroutine("Skip");
 
+        _heroineImage[0].SetActive(true);
         uitext.DrawText("新坂雪枝", "あ、あのそれ私のマスクです...とってくれてありがとうございます");
         yield return StartCoroutine("Skip");
 
@@ -94,10 +95,10 @@ public class TalkManager : MonoBehaviour
         uitext.DrawText("主人公", "それなら、渡せてよかったです");
         yield return StartCoroutine("Skip");
 
+        _heroineImage[0].SetActive(false);
+
         uitext.DrawText("お礼の意味を込めてのお辞儀をすると彼女はどこかへ行ってしまった。");
         yield return StartCoroutine("Skip");
-
-        _heroineImage[0].SetActive(false);
 
         uitext.DrawText("花粉症の季節でもないのになんでマスク付けてるんだろう？");
         yield return StartCoroutine("Skip");
@@ -109,9 +110,6 @@ public class TalkManager : MonoBehaviour
         yield return StartCoroutine("Skip");
 
         uitext.DrawText("主人公","それにしても、むちゃくちゃかわいかったなぁ...");
-        yield return StartCoroutine("Skip");
-
-        uitext.DrawText("お礼の意味を込めてのお辞儀をすると彼女はどこかへ行ってしまった。");
         yield return StartCoroutine("Skip");
 
         StartCoroutine("Route");
@@ -139,10 +137,10 @@ public class TalkManager : MonoBehaviour
         uitext.DrawText("新坂雪枝","いいんです！別に誤解してないので、それに私かわいくないのでそんなこと言わないでください、マスクありがとうございました");
         yield return StartCoroutine("Skip");
 
+        _heroineImage[0].SetActive(false);
+
         uitext.DrawText("ぺこりとお辞儀をして走ってどこかへ行ってしまった。");
         yield return StartCoroutine("Skip");
-
-        _heroineImage[0].SetActive(false);
 
         uitext.DrawText("なんとなく追いかけようかと思ったが追いかけるほどの理由がないため");
         yield return StartCoroutine("Skip");
@@ -195,8 +193,6 @@ public class TalkManager : MonoBehaviour
 
         StartCoroutine("Branch1");
         //_button.SetActive(true);
-
-
     }
     IEnumerator RouteA1()
     {
