@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Kanaya/Scenes/TitleScene.unity
+    guid: 9c469c34357574d4da6ac540b342c2ee
+  - enabled: 1
     path: Assets/Kanaya/Scenes/Kanaya.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Kanaya/Scenes/Kanaya2.unity
+    guid: 62eee99c6829de44fa71b8e21cea231e
+  - enabled: 1
     path: Assets/Kondo/Scenes/Kondo.unity
     guid: 7c31596e51563594498eac2ac951ad7b
-  - enabled: 1
-    path: Assets/Kanaya/Scenes/Kanaya 1.unity
-    guid: 62eee99c6829de44fa71b8e21cea231e
   m_configObjects: {}

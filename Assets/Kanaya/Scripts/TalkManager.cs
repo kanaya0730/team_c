@@ -110,18 +110,16 @@ public class TalkManager : MonoBehaviour
         _ButtonA.SetActive(false);
         _ButtonB.SetActive(false);
         uitext.DrawText("主人公", "えっと...どうぞ");
-        yield return StartCoroutine("Skip");
+        yield return StartCoroutine(Skip());
 
         uitext.DrawText("雪枝", "あ、ありがとうございますこれがなかったらどうしようかと");
-        yield return StartCoroutine("Skip");
+        yield return StartCoroutine(Skip());
 
         uitext.DrawText("主人公", "それなら、渡せてよかったです");
-        yield return StartCoroutine("Skip");
-
-        _heroineImage[0].SetActive(false);
+        yield return StartCoroutine(Skip());
 
         uitext.DrawText("お礼の意味を込めてのお辞儀をすると彼女はどこかへ行ってしまった。");
-        yield return StartCoroutine("Skip");
+        yield return StartCoroutine(Skip());
 
         uitext.DrawText("花粉症の季節でもないのになんでマスク付けてるんだろう？");
         yield return StartCoroutine("Skip");
@@ -159,8 +157,6 @@ public class TalkManager : MonoBehaviour
 
         uitext.DrawText("雪枝","いいんです！別に誤解してないので、それに私かわいくないのでそんなこと言わないでください、マスクありがとうございました");
         yield return StartCoroutine("Skip");
-
-        _heroineImage[0].SetActive(false);
 
         uitext.DrawText("ぺこりとお辞儀をして走ってどこかへ行ってしまった。");
         yield return StartCoroutine("Skip");

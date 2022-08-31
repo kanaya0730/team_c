@@ -1591,7 +1591,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 867250090}
-        m_MethodName: BranchA
+        m_MethodName: BranchA1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2551,7 +2551,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 867250090}
-        m_MethodName: BranchB
+        m_MethodName: BranchB1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

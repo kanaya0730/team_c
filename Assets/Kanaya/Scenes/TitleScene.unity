@@ -399,11 +399,11 @@ RectTransform:
   m_Children:
   - {fileID: 1479132298}
   m_Father: {fileID: 1585055427}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -148, y: -232}
+  m_AnchoredPosition: {x: 680, y: 180}
   m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342572126
@@ -607,7 +607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -779, y: -305}
+  m_AnchoredPosition: {x: -780, y: -280}
   m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678292353
@@ -1357,7 +1357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C8\u30FC\u30EA\u30FC2"
+  m_Text: "\u30B9\u30C8\u30FC\u30EA\u30FC1"
 --- !u!222 &1479132300
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1606,8 +1606,8 @@ RectTransform:
   - {fileID: 1707703858}
   - {fileID: 678292352}
   - {fileID: 2136335713}
-  - {fileID: 2031192120}
   - {fileID: 342572125}
+  - {fileID: 2031192120}
   - {fileID: 1713296095}
   - {fileID: 917870924}
   m_Father: {fileID: 0}
@@ -2288,7 +2288,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C8\u30FC\u30EA\u30FC1"
+  m_Text: "\u30B9\u30C8\u30FC\u30EA\u30FC2"
 --- !u!222 &1888435642
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2468,11 +2468,11 @@ RectTransform:
   m_Children:
   - {fileID: 1888435640}
   m_Father: {fileID: 1585055427}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 237, y: 130}
+  m_AnchoredPosition: {x: 200, y: 180}
   m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031192121
@@ -2526,7 +2526,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: kanaya1
+          m_StringArgument: kanaya2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2031192122
@@ -2602,7 +2602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -498, y: 196}
+  m_AnchoredPosition: {x: -300, y: -280}
   m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136335714

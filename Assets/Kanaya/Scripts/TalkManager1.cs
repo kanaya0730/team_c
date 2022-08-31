@@ -36,7 +36,7 @@ public class TalkManager1 : MonoBehaviour
 
     /// <summary>[0],通常 [1],笑顔 [2],照れる [3],困る [4],落ち込む</summary>
     [SerializeField]
-    [Header("ヒロイン1立ち絵")] 
+    [Header("ヒロイン1立ち絵")]
     GameObject[] _heroineImage;
 
     /// <summary>主人公立ち絵</summary>
@@ -104,8 +104,6 @@ public class TalkManager1 : MonoBehaviour
         uitext.DrawText("洸", "見てないって言って！");
         yield return StartCoroutine("Skip");
 
-        _heroineImage[0].SetActive(false);
-
         uitext.DrawText("主人公","見てないよ！さすがに人のを勝手には見ないよ");
         yield return StartCoroutine("Skip");
 
@@ -141,8 +139,6 @@ public class TalkManager1 : MonoBehaviour
 
         uitext.DrawText("彼女に悪いことしたなと思いながら、もしうっかり喋ったりでもしたらなにをされるか想像するとイヤな想像ができ、身震いする");
         yield return StartCoroutine("Skip");
-
-        _heroineImage[0].SetActive(false);
 
         uitext.DrawText("うっかり喋ったりでもしたらたまったもんじゃない、喋らないようにしないと。そのことを肝に銘じながら自分も帰る。");
         yield return StartCoroutine("Skip");
