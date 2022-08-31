@@ -147,7 +147,10 @@ public class TalkManager1 : MonoBehaviour
     IEnumerator Route()
     {
         uitext.DrawText("プレイしていただきありがとうございました。");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("TitleScene");
         yield return StartCoroutine("Skip");
+
     }
 }
 
